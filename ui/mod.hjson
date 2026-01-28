@@ -1,0 +1,28 @@
+#the mod name as displayed in-game
+displayName: "Maple"
+
+#the internal name of your mod
+name: "maple"
+
+#your name
+author: "Mars0x0"
+
+#the fully qualified main class of the mod
+main: "me.mars.maple.ui.Maple"
+
+#the mod description as seen in the mod dialog
+description: "A UI library for building composable UI using redwood. Kotlin version: $KOTLINVER"
+
+#the mod version
+version: $MODVER
+
+#bundled kotlin version
+kotlin-version: $KOTLINVER
+
+#the minimum game build required to run this mod
+minGameVersion: 154
+
+#this is a java mod
+java: true
+
+hidden:true

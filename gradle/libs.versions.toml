@@ -1,0 +1,26 @@
+[versions]
+mindustry = "v154"
+
+kotlin = "2.2.10"
+# TODO My local d8 only supports up to kotlin 2.2 hence we can't use 2.3 yet
+kotlinx-coroutines = "1.10.2"
+
+redwood = "0.18.0"
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin"}
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
+redwood = { id = "app.cash.redwood.schema", version.ref = "redwood"}
+
+[libraries]
+arc-core = { group = "com.github.Anuken.Arc", name = "arc-core", version.ref = "mindustry" }
+mindustry = {group = "com.github.Anuken.Mindustry", name = "core", version.ref = "mindustry" }
+
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
+
+compose-runtime = { group = "androidx.compose.runtime", name = "runtime", version = "1.10.1"}
+redwood-schema = {group = "app.cash.redwood", name = "redwood-schema", version.ref = "redwood"}
+redwood-compose = {group = "app.cash.redwood", name = "redwood-compose", version.ref = "redwood"}
+redwood-widget = {group = "app.cash.redwood", name = "redwood-widget", version.ref = "redwood"}

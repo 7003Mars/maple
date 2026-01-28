@@ -47,6 +47,10 @@ hs_err_pid*
 crash-report-*
 replay_pid*
 
+## Kotlin
+.kotlin
+
+
 ## Robovm
 /ios/robovm-build/
 
@@ -155,3 +159,19 @@ gradle-app.setting
 .DS_Store
 Thumbs.db
 android/libs/
+
+## Mod
+
+# Schema auto-generated code
+/schema/build/
+/schema/redwood-api.xml
+/schema/compose/build
+/schema/modifier/build
+/schema/widget/build
+/schema/api/build
+
+# Renderer build
+/renderer/build
+
+# UI build
+/ui/build
