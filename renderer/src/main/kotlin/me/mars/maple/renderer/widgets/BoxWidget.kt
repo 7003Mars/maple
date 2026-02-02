@@ -22,7 +22,6 @@ class BoxWidget(override val value: me.mars.maple.renderer.elem.Box) : BoxP<Elem
             }
 
             override fun remove(index: Int, count: Int) {
-                // TODO we need to call removeChild on the parent.
                 value.remove(index, count)
             }
 

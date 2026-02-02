@@ -115,7 +115,6 @@ class Row : WidgetGroup(), ChildrenAware {
             // How much space the element is able to take up
             val elemW = if (cell.fillX) areaW else min(elem.prefWidth, areaW)
             val elemH = if (cell.fillY) areaH else min(elem.prefHeight, areaH)
-            // TODO Not sure if x-axis alignment is even still required or would make sense?
             var x = outPositions[i] + cell.padLeft.toFloat()
             if (align and Align.right != 0) {
                 x += areaW - elemW
