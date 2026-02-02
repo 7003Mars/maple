@@ -13,7 +13,7 @@ subprojects {
     plugins.withType<JavaPlugin> {
         configure<JavaPluginExtension> {
             toolchain {
-                languageVersion.set(JavaLanguageVersion.of(16))
+                languageVersion.set(JavaLanguageVersion.of(17))
             }
         }
     }
