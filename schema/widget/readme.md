@@ -1,0 +1,1 @@
+Generated widget interfaces that different backends implement. These interfaces are implemented in the `:renderer` subproject.

@@ -3,6 +3,7 @@
 plugins {
     kotlin("multiplatform")
     id("app.cash.redwood.generator.compose")
+    id("maven-publish")
 }
 
 kotlin {
@@ -24,4 +25,14 @@ kotlin {
 redwoodSchema {
     source = project(":schema")
     type = "me.mars.maple.schema.Primitives"
+}
+
+publishing {
+    publications {
+        withType<MavenPublication> {
+            val id = project.path.removePrefix(":").replace(":", "-")
+
+            artifactId = if (name == "kotlinMultiplatform") id else "$id-$name"
+        }
+    }
 }

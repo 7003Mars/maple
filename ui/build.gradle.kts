@@ -3,10 +3,10 @@ import org.gradle.kotlin.dsl.support.serviceOf
 plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.kotlin.compose)
-    // TODO Prob no need to catalog these plugins since it is specific to this project only
-    id("com.gradleup.shadow") version "9.0.2"
-    id("xyz.wagyourtail.jvmdowngrader") version "1.3.5"
     id("maven-publish")
+    // TODO Prob no need to catalog these plugins since it is specific to this project only
+    id("xyz.wagyourtail.jvmdowngrader") version "1.3.5"
+    id("com.gradleup.shadow") version "9.0.2"
 }
 
 dependencies {
