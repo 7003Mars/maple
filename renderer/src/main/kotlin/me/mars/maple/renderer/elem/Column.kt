@@ -156,6 +156,9 @@ class Column : WidgetGroup(), ChildrenAware {
     }
 
     override fun remove(index: Int, count: Int) {
+        for (i in index until index + count) {
+            children[i].onRemoved()
+        }
         children.remove(index, count)
         cells.remove(index, count)
         childrenChanged()

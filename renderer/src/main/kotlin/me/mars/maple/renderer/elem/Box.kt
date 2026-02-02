@@ -141,12 +141,8 @@ class Box : WidgetGroup(), ChildrenAware {
     }
 
     override fun remove(index: Int, count: Int) {
-        val stage = scene
         for (i in index until index + count) {
-            val child = children[i]
-            stage.unfocus(child)
-//            child.scene = null // TODO scene is protected, use reflect to invoke setScene or set it
-            child.parent = null
+            children[i].onRemoved()
         }
         children.remove(index, count)
         cells.remove(index, count)
