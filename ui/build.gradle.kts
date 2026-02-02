@@ -29,7 +29,7 @@ val archivesName: String = base.archivesName.get()
 tasks.shadowJar {
     archiveFileName.set("${archivesName}Shadowed.jar")
 
-    val buildVer: String = rootProject.version.toString()
+    val buildVer: String = rootProject.version.toString() + (project.findProperty("verSuffix")?.let { "-$it" } ?: "")
     val kotlinVer: String = libs.versions.kotlin.get()
 
     from("assets/") {
