@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.kotlin.jvm)
+    id("maven-publish")
 }
 
 dependencies {
@@ -12,4 +13,14 @@ dependencies {
     compileOnly(libs.mindustry)
 
     implementation(libs.redwood.widget)
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+
+            artifactId = project.name
+        }
+    }
 }
