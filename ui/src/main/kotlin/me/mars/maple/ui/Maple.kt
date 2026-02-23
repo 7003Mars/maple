@@ -33,7 +33,6 @@ class Maple : Mod() {
     companion object {
         fun runMaple(widgetSystem: WidgetSystem<Element>, content: @Composable BoxScope.() -> Unit): MapleUI {
             val root = Box()
-            root.setFillParent(true)
             val maple = MapleUI(root, widgetSystem)
             maple.composition.setContent {
                 // TODO Ultra cursed stuff, Im not sure if this will even work properly
