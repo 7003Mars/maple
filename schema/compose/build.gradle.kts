@@ -2,7 +2,7 @@
 
 plugins {
     kotlin("multiplatform")
-    id("app.cash.redwood.generator.compose")
+    alias(libs.plugins.redwood.compose)
     id("maven-publish")
 }
 

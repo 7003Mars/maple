@@ -1,7 +1,10 @@
 plugins {
     alias(libs.plugins.kotlin.jvm) apply false
     alias(libs.plugins.kotlin.compose) apply false
-    alias(libs.plugins.redwood) apply false
+    alias(libs.plugins.redwood.schema) apply false
+    alias(libs.plugins.redwood.widget) apply false
+    alias(libs.plugins.redwood.modifiers) apply false
+    alias(libs.plugins.redwood.compose) apply false
 }
 
 version = "0.1.0"

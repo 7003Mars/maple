@@ -11,7 +11,11 @@ redwood = "0.18.0"
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin"}
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
-redwood = { id = "app.cash.redwood.schema", version.ref = "redwood"}
+redwood-schema = { id = "app.cash.redwood.schema", version.ref = "redwood"}
+redwood-widget = { id = "app.cash.redwood.generator.widget", version.ref = "redwood" }
+redwood-modifiers = { id = "app.cash.redwood.generator.modifiers", version.ref = "redwood" }
+redwood-compose = { id = "app.cash.redwood.generator.compose", version.ref = "redwood" }
+
 
 [libraries]
 arc-core = { group = "com.github.Anuken.Arc", name = "arc-core", version.ref = "mindustry" }

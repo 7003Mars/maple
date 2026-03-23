@@ -2,7 +2,7 @@
 
 plugins {
     alias(libs.plugins.kotlin.jvm)
-    alias(libs.plugins.redwood)
+    alias(libs.plugins.redwood.schema)
     id("maven-publish")
 }
 

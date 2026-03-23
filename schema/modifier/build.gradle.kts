@@ -2,7 +2,7 @@
 
 plugins {
     kotlin("multiplatform")
-    id("app.cash.redwood.generator.modifiers")
+    alias(libs.plugins.redwood.modifiers)
 
 }
 
