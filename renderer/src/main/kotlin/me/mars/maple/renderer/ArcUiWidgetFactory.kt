@@ -40,7 +40,7 @@ class ArcUiWidgetFactory : PrimitivesWidgetFactory<Element> {
 
     override fun TextAreaP(): TextAreaP<Element> = TextAreaWidget(TextArea(""))
 
-
+    override fun SliderP(): SliderP<Element> = SliderWidget(Slider(0f, 1f, 0.01f, false))
 }
 
 fun PrimitivesWidgetSystem(): PrimitivesWidgetSystem<Element> {

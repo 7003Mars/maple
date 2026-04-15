@@ -20,6 +20,7 @@ import app.cash.redwood.schema.Schema
         CheckBoxP::class,
         TextFieldP::class,
         TextAreaP::class,
+        SliderP::class,
         // Modifiers
         Align::class,
         Padding::class,

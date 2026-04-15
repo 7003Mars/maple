@@ -121,6 +121,15 @@ fun TextAreaShowcase() {
 }
 
 @Composable
+fun SliderShowcase() {
+    var cur by remember { mutableStateOf(2f) }
+    Column {
+        Label("Current value: $cur")
+        Slider(cur, min = -3f, max = 50f, stepSize = 5f, onValueChanged = { cur = it })
+    }
+}
+
+@Composable
 fun TaskProgress(total: Float, individual: List<Float>) {
     var collapsed by remember { mutableStateOf(false) }
     Box(background = Tex.pane) {

@@ -5,13 +5,7 @@ import androidx.compose.runtime.remember
 import app.cash.redwood.Modifier
 import arc.graphics.Color
 import arc.scene.style.Drawable
-import arc.scene.ui.Button
-import arc.scene.ui.CheckBox
-import arc.scene.ui.ImageButton
-import arc.scene.ui.Label
-import arc.scene.ui.ScrollPane
-import arc.scene.ui.TextButton
-import arc.scene.ui.TextField
+import arc.scene.ui.*
 import arc.util.Align
 import arc.util.Scaling
 import me.mars.maple.schema.api.Arrangement
@@ -75,11 +69,6 @@ fun TextButton(text: String, onClick: () -> Unit, buttonStyle: TextButton.TextBu
 }
 
 @Composable
-fun ImageButton(drawable: Drawable, onClick: () -> Unit, disabled: Boolean = false, buttonStyle: ImageButton.ImageButtonStyle = Styles.defaulti, modifier: Modifier = Modifier) {
-    ImageButtonP(onClick, disabled, buttonStyle, modifier)
-}
-
-@Composable
 fun ImageButton(drawable: Drawable, onClick: () -> Unit, disabled: Boolean = false, modifier: Modifier = Modifier) {
     val style = remember(drawable) { ImageButton.ImageButtonStyle(Styles.defaulti).apply { imageUp = drawable } }
     ImageButtonP(onClick, disabled, style, modifier)
@@ -98,4 +87,10 @@ fun TextField(text: String, onChange: (String) -> Unit, textFieldStyle: TextFiel
 @Composable
 fun TextArea(text: String, onChange: (String) -> Unit, prefRows: Int = 3, textAreaStyle: TextField.TextFieldStyle = Styles.defaultField, modifier: Modifier = Modifier) {
     TextAreaP(text, onChange, prefRows, textAreaStyle, modifier)
+}
+
+@Composable
+fun Slider(value: Float, min: Float = 0f, max: Float =  1f, stepSize: Float = 0.01f, onValueChanged: (Float) -> Unit, sliderStyle: Slider.SliderStyle = Styles.defaultSlider, modifier: Modifier = Modifier
+) {
+    SliderP(value, min, max, stepSize, onValueChanged, sliderStyle, modifier)
 }

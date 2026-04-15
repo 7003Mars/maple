@@ -95,6 +95,7 @@ data class ProgressBarP(
     @Property(2) val min: Float,
     @Property(3) val max: Float,
     @Property(4) val stepSize: Float,
+    // TODO The vertical field too
     @Property(5) val progressBarStyle: ProgressBar.ProgressBarStyle
 )
 
@@ -144,4 +145,15 @@ data class TextAreaP(
     @Property(2) val onChange: (String) -> Unit,
     @Property(3) val prefRows: Int,
     @Property(4) val textAreaStyle: TextField.TextFieldStyle
+)
+
+@Widget(16)
+data class SliderP(
+    @Property(1) val value: Float,
+    @Property(2) val min: Float,
+    @Property(3) val max: Float,
+    @Property(4) val stepSize: Float,
+    @Property(5) val onValueChanged: (Float) -> Unit,
+//    @Property(6) val vertical: Boolean, // TODO
+    @Property(6) val sliderStyle: Slider.SliderStyle
 )
