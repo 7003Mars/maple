@@ -122,7 +122,9 @@ data class TextButtonP(
 data class ImageButtonP(
     @Property(1) val onClick: () -> Unit,
     @Property(2) val disabled: Boolean,
-    @Property(3) val buttonStyle: ImageButton.ImageButtonStyle,
+    @Property(3) val align: Int,
+    @Property(4) val scaling: Scaling,
+    @Property(5) val buttonStyle: ImageButton.ImageButtonStyle,
 )
 
 @Widget(13)

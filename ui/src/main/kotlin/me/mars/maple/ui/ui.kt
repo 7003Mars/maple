@@ -70,9 +70,9 @@ fun TextButton(text: String, onClick: () -> Unit, buttonStyle: TextButton.TextBu
 }
 
 @Composable
-fun ImageButton(drawable: Drawable, onClick: () -> Unit, disabled: Boolean = false, modifier: Modifier = Modifier) {
-    val style = remember(drawable) { ImageButton.ImageButtonStyle(Styles.defaulti).apply { imageUp = drawable } }
-    ImageButtonP(onClick, disabled, style, modifier)
+fun ImageButton(drawable: Drawable, onClick: () -> Unit, align: Int = Align.center, scaling: Scaling = Scaling.fit, style: ImageButton.ImageButtonStyle = Styles.defaulti, disabled: Boolean = false, modifier: Modifier = Modifier) {
+    val style = remember(drawable, style) { ImageButton.ImageButtonStyle(style).apply { imageUp = drawable } }
+    ImageButtonP(onClick, disabled, align, scaling, style, modifier)
 }
 
 @Composable
