@@ -8,6 +8,11 @@ import me.mars.maple.schema.widget.TextAreaP
 
 class TextAreaWidget(override val value: TextArea) : TextAreaP<Element> {
     override var modifier: Modifier = Modifier
+    private var _onChange: ((String) -> Unit)? = null
+
+    init {
+        value.changed { _onChange?.invoke(value.text) }
+    }
 
     override fun text(text: String) {
         val cursor = value.cursorPosition
@@ -16,7 +21,7 @@ class TextAreaWidget(override val value: TextArea) : TextAreaP<Element> {
     }
 
     override fun onChange(onChange: (String) -> Unit) {
-        value.changed { onChange(value.text) }
+        _onChange = onChange
     }
 
     override fun prefRows(prefRows: Int) {

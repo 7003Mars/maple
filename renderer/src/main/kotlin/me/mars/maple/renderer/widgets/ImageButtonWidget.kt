@@ -8,9 +8,14 @@ import me.mars.maple.schema.widget.ImageButtonP
 
 class ImageButtonWidget(override val value: ImageButton) : ImageButtonP<Element>{
     override var modifier: Modifier = Modifier
+    private var _onClick: (() -> Unit)? = null
+
+    init {
+        value.clicked { _onClick?.invoke() }
+    }
 
     override fun onClick(onClick: () -> Unit) {
-        value.clicked(onClick)
+        _onClick = onClick
     }
 
     override fun disabled(disabled: Boolean) {

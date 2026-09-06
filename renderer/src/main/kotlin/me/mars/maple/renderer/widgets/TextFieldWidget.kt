@@ -7,6 +7,11 @@ import me.mars.maple.schema.widget.TextFieldP
 
 class TextFieldWidget(override val value: TextField) : TextFieldP<Element> {
     override var modifier: Modifier = Modifier
+    private var _onChange: ((String) -> Unit)? = null
+
+    init {
+        value.changed { _onChange?.invoke(value.text) }
+    }
 
     override fun text(text: String) {
         val cursor = value.cursorPosition
@@ -15,7 +20,7 @@ class TextFieldWidget(override val value: TextField) : TextFieldP<Element> {
     }
 
     override fun onChange(onChange: (String) -> Unit) {
-        value.changed { onChange(value.text) }
+        _onChange = onChange
     }
 
     override fun textFieldStyle(textFieldStyle: TextField.TextFieldStyle) {

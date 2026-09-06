@@ -11,9 +11,11 @@ class ButtonWidget : ButtonP<Element> {
     val container = Box()
     override val value: Button = Button()
     override var modifier: Modifier = Modifier
+    private var _onClick: (() -> Unit)? = null
 
     init {
         value.add(container).grow()
+        value.clicked { _onClick?.invoke() }
     }
 
     override val children: Widget.Children<Element> = object : Widget.Children<Element> {
@@ -41,7 +43,7 @@ class ButtonWidget : ButtonP<Element> {
     }
 
     override fun onClick(onClick: () -> Unit) {
-        value.clicked(onClick)
+        _onClick = onClick
     }
 
     override fun style(style: Button.ButtonStyle) {

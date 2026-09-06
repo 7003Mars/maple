@@ -8,13 +8,26 @@ import me.mars.maple.schema.widget.SliderP
 
 class SliderWidget(override val value: Slider) : SliderP<Element> {
     override var modifier: Modifier = Modifier
+    private var suppress: Boolean = false
+    private var _onValueChanged: ((Float) -> Unit)? = null
+
+    init {
+        value.changed {
+            if (suppress) return@changed
+            _onValueChanged?.invoke(value.value)
+        }
+    }
 
     override fun value(value: Float) {
+        suppress = true
         this.value.value = value
+        suppress = false
     }
 
     override fun range(range: SliderRange) {
+        suppress = true
         value.setRange(range.min, range.max)
+        suppress = false
     }
 
     override fun stepSize(stepSize: Float) {
@@ -22,7 +35,7 @@ class SliderWidget(override val value: Slider) : SliderP<Element> {
     }
 
     override fun onValueChanged(onValueChanged: (Float) -> Unit) {
-        value.changed { onValueChanged(value.value) }
+        _onValueChanged = onValueChanged
     }
 
     override fun sliderStyle(sliderStyle: Slider.SliderStyle) {

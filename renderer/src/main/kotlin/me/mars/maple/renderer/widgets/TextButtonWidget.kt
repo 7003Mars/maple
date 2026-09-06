@@ -7,13 +7,18 @@ import me.mars.maple.schema.widget.TextButtonP
 
 class TextButtonWidget(override val value: TextButton) : TextButtonP<Element> {
     override var modifier: Modifier = Modifier
+    private var _onClick: (() -> Unit)? = null
+
+    init {
+        value.clicked { _onClick?.invoke() }
+    }
 
     override fun text(text: String) {
         value.setText(text)
     }
 
     override fun onClick(onClick: () -> Unit) {
-        value.clicked(onClick)
+        _onClick = onClick
     }
 
     override fun buttonStyle(buttonStyle: TextButton.TextButtonStyle) {
