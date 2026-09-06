@@ -8,6 +8,7 @@ import arc.scene.style.Drawable
 import arc.scene.ui.*
 import arc.util.Scaling
 import me.mars.maple.schema.api.Arrangement
+import me.mars.maple.schema.api.SliderRange
 
 /*
 Order for fields defined:
@@ -150,10 +151,9 @@ data class TextAreaP(
 @Widget(16)
 data class SliderP(
     @Property(1) val value: Float,
-    @Property(2) val min: Float,
-    @Property(3) val max: Float,
-    @Property(4) val stepSize: Float,
-    @Property(5) val onValueChanged: (Float) -> Unit,
+    @Property(2) val range: SliderRange,
+    @Property(3) val stepSize: Float,
+    @Property(4) val onValueChanged: (Float) -> Unit,
 //    @Property(6) val vertical: Boolean, // TODO
-    @Property(6) val sliderStyle: Slider.SliderStyle
+    @Property(5) val sliderStyle: Slider.SliderStyle
 )

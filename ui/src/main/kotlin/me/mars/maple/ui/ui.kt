@@ -9,6 +9,7 @@ import arc.scene.ui.*
 import arc.util.Align
 import arc.util.Scaling
 import me.mars.maple.schema.api.Arrangement
+import me.mars.maple.schema.api.SliderRange
 import me.mars.maple.schema.compose.*
 import mindustry.ui.Styles
 
@@ -90,7 +91,13 @@ fun TextArea(text: String, onChange: (String) -> Unit, prefRows: Int = 3, textAr
 }
 
 @Composable
-fun Slider(value: Float, min: Float = 0f, max: Float =  1f, stepSize: Float = 0.01f, onValueChanged: (Float) -> Unit, sliderStyle: Slider.SliderStyle = Styles.defaultSlider, modifier: Modifier = Modifier
+fun Slider(value: Float, range: SliderRange = SliderRange(), stepSize: Float = 0.01f, onValueChanged: (Float) -> Unit, sliderStyle: Slider.SliderStyle = Styles.defaultSlider, modifier: Modifier = Modifier
 ) {
-    SliderP(value, min, max, stepSize, onValueChanged, sliderStyle, modifier)
+    SliderP(value, range, stepSize, onValueChanged, sliderStyle, modifier)
+}
+
+@Composable
+fun Slider(value: Float, min: Float, max: Float, stepSize: Float = 0.01f, onValueChanged: (Float) -> Unit, sliderStyle: Slider.SliderStyle = Styles.defaultSlider, modifier: Modifier = Modifier
+) {
+    SliderP(value, SliderRange(min, max), stepSize, onValueChanged, sliderStyle, modifier)
 }

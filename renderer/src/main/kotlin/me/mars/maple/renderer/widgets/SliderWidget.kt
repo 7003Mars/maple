@@ -3,6 +3,7 @@ package me.mars.maple.renderer.widgets
 import app.cash.redwood.Modifier
 import arc.scene.Element
 import arc.scene.ui.Slider
+import me.mars.maple.schema.api.SliderRange
 import me.mars.maple.schema.widget.SliderP
 
 class SliderWidget(override val value: Slider) : SliderP<Element> {
@@ -12,12 +13,8 @@ class SliderWidget(override val value: Slider) : SliderP<Element> {
         this.value.value = value
     }
 
-    override fun min(min: Float) {
-        value.setRange(min, value.maxValue)
-    }
-
-    override fun max(max: Float) {
-        value.setRange(value.minValue, max)
+    override fun range(range: SliderRange) {
+        value.setRange(range.min, range.max)
     }
 
     override fun stepSize(stepSize: Float) {

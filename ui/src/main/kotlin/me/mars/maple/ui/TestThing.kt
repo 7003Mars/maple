@@ -7,6 +7,7 @@ import arc.scene.ui.Dialog
 import arc.util.Align
 import me.mars.maple.renderer.PrimitivesWidgetSystem
 import me.mars.maple.schema.api.Arrangement
+import me.mars.maple.schema.api.SliderRange
 import me.mars.maple.schema.compose.ColumnScope
 import mindustry.gen.Icon
 import mindustry.gen.Tex
@@ -125,7 +126,7 @@ fun SliderShowcase() {
     var cur by remember { mutableStateOf(2f) }
     Column {
         Label("Current value: $cur")
-        Slider(cur, min = -3f, max = 50f, stepSize = 5f, onValueChanged = { cur = it })
+        Slider(cur, range = SliderRange(), stepSize = 5f, onValueChanged = { cur = it })
     }
 }
 
